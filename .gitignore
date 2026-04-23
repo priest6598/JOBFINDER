@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+.turbo/
+
+# Env
+.env
+.env.local
+.env*.local
+!.env.example
+
+# DB
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Uploads
+backend/storage/
+backend/uploads/
