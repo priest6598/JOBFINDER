@@ -4,35 +4,32 @@
 
 @layer base {
   :root {
-    --bg: 255 255 255;
-    --bg-2: 248 249 250;
-    --bg-3: 241 243 245;
-    --text: 15 15 17;
-    --text-2: 82 82 91;
-    --text-3: 161 161 170;
-    --border: 228 228 231;
+    --bg: 248 250 252;
+    --bg-2: 241 245 249;
+    --bg-3: 226 232 240;
+    --bg-white: 255 255 255;
+    --text: 15 23 42;
+    --text-2: 100 116 139;
+    --text-3: 148 163 184;
+    --border: 226 232 240;
     --brand: 99 102 241;
-    --radius: 0.625rem;
-  }
-  .dark {
-    --bg: 11 11 14;
-    --bg-2: 19 19 24;
-    --bg-3: 27 27 34;
-    --text: 250 250 250;
-    --text-2: 161 161 170;
-    --text-3: 82 82 91;
-    --border: 39 39 45;
-    --brand: 129 140 248;
+    --radius: 0.75rem;
   }
 
   * {
-    border-color: rgb(var(--border));
+    border-color: rgb(var(--border) / 0.6);
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: rgb(var(--bg));
     color: rgb(var(--text));
     font-feature-settings: "rlig" 1, "calt" 1;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::-webkit-scrollbar {
@@ -46,6 +43,12 @@
     background: rgb(var(--border));
     border-radius: 99px;
   }
+
+  /* Selection */
+  ::selection {
+    background: rgb(var(--brand) / 0.15);
+    color: rgb(var(--text));
+  }
 }
 
 @layer utilities {
@@ -53,10 +56,10 @@
     @apply bg-gradient-to-r from-brand-500 to-violet-500 bg-clip-text text-transparent;
   }
   .card {
-    @apply bg-[rgb(var(--bg))] border border-[rgb(var(--border))] rounded-xl shadow-card;
+    @apply bg-white border border-slate-200/80 rounded-2xl shadow-card;
   }
   .card-hover {
-    @apply hover:border-brand-400/40 hover:shadow-card-lg transition-all duration-200;
+    @apply hover:border-brand-300/50 hover:shadow-card-lg transition-all duration-300;
   }
   .muted {
     color: rgb(var(--text-2));
@@ -64,10 +67,7 @@
   .faint {
     color: rgb(var(--text-3));
   }
-  .bg-bg-2 {
-    background: rgb(var(--bg-2));
-  }
-  .bg-bg-3 {
-    background: rgb(var(--bg-3));
+  .section-padding {
+    @apply px-5 sm:px-6 lg:px-8;
   }
 }
